@@ -1,0 +1,72 @@
+header {
+    background-color: #247291;
+    height: 100px;
+}
+
+footer {
+    height: 100px;
+    width: 100%;
+    margin: 0;
+    background-color: #247291;
+    float: bottom;
+    bottom: 0;
+    text-align: center;
+}
+
+#feed {
+    background-color: #fffdd0;
+    height: 500px;
+    width: 1350px;
+    position: relative;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 20px;
+    overflow: auto;
+}
+
+body {
+    background-color: #ead895;
+    margin: 0;
+    padding: 0;
+}
+
+#menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+li {
+    display: inline;
+}
+
+a {
+    display: block;
+    padding: 8px;
+    background-color: #ead895;
+    float:left;
+}
+.btn {
+    display: block;
+    padding: 8px;
+    background-color: #ead895;
+    float: left;
+    text-align:left;
+}
+.post{
+    background-color: #ead895;
+    margin:10px;
+    padding:5px 20px 20px;
+    border-radius:20px;
+    width:500px;
+    height:250px;
+}
+.post p {
+    float:right;
+}
+.post img {
+    margin:10px;
+    height:240px;
+    width: 240px;
+}
