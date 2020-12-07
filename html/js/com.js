@@ -14,14 +14,14 @@ const communication = (() => {
     };
 
 // get all cats
-    const getCats = async () => {
+    const getPosts = async () => {
         try {
             const options = {
                 headers: {
                     'Authorization': 'Bearer ' + sessionStorage.getItem('token'),
                 },
             };
-            return await doFetch(urlToServer + '/cat', options);
+            return await doFetch(urlToServer + '/post', options);
         } catch (e) {
             throw new Error(e.message);
         }
@@ -42,7 +42,7 @@ const communication = (() => {
     };
 
 // add cat
-    const addCat = async (formData) => {
+    const addPost = async (formData) => {
         try {
             const options = {
                 method: 'POST',
@@ -51,14 +51,14 @@ const communication = (() => {
                 },
                 body: formData,
             };
-            return await doFetch(urlToServer + '/cat', options);
+            return await doFetch(urlToServer + '/post', options);
         } catch (e) {
             throw new Error(e.message);
         }
     };
 
 // modify cat
-    const modifyCat = async (data) => {
+    const modifyPost = async (data) => {
         try {
             const options = {
                 method: 'PUT',
@@ -68,14 +68,14 @@ const communication = (() => {
                 },
                 body: JSON.stringify(data),
             };
-            return await doFetch(urlToServer + '/cat', options);
+            return await doFetch(urlToServer + '/post', options);
         } catch (e) {
             throw new Error(e.message);
         }
     };
 
 // delete cat
-    const deleteCat = async (id) => {
+    const deletePost = async (id) => {
         const options = {
             method: 'DELETE',
             headers: {
@@ -83,7 +83,7 @@ const communication = (() => {
             },
         };
         try {
-            return await doFetch(urlToServer + '/cat/' + id, options);
+            return await doFetch(urlToServer + '/post/' + id, options);
         } catch (e) {
             // console.log(e.message());
             throw new Error(e.message);
@@ -133,10 +133,10 @@ const communication = (() => {
     };
 
     return {
-        getCats,
-        modifyCat,
-        addCat,
-        deleteCat,
+        getPosts,
+        modifyPost,
+        addPost,
+        deletePost,
         getUsers,
         login,
         register,
