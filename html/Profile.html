@@ -4,19 +4,52 @@
     <meta charset="UTF-8">
     <title>Rate My Cat</title>
     <link rel="stylesheet" href="Style/Style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 <header>
     Rate My Cat
     <ul id="menu">
-        <li ><a href="Main.html">Kotisivu</a></li>
-        <li id="btn_feed"><a>Feed</a></li>
-        <li id="btn_up"><a>Upload</a></li>
-        <li><a href="Profile.html">Profiili</a></li>
+        <li class="menu_btn"><a href="Main.html">Kotisivu</a></li>
+        <li class="menu_btn" id="btn_feed"><a href="Main.html">Feed</a></li>
+        <li class="menu_btn" id="btn_up"><a>Upload</a></li>
+        <li class="menu_btn"><a href="Profile.html">Profiili</a></li>
+        <li class="menu_btn" class="sign">Kirjaudu ulos</li>
     </ul>
 
-    Kirjaudu sisään
+
 </header>
+<div id="profile">
+    <figure>
+        <p id="user">Username: Matti</p>
+        <img class="user_pic" src="http://placekitten.com/50/50">
+    </figure>
+</div>
+<div id="feed">
+    <ul id="content">
+        <li class="post">
+        <p>Kissan nimi</p>
+            <img src="http://placekitten.com/200/150">
+        </li>
+        <li class="post">
+            <p>Kissan nimi</p>
+            <img src="http://placekitten.com/200/150">
+        </li>
+        <li class="post">
+            <p>Kissan nimi</p>
+            <img src="http://placekitten.com/200/150">
+        </li>
+        <li class="post">
+            <p>Kissan nimi</p>
+            <img src="http://placekitten.com/200/150">
+        </li>
+        <li class="post">
+            <p>Kissan nimi</p>
+            <img src="http://placekitten.com/200/150">
+        </li>
+    </ul>
+
+</div>
 <footer></footer>
 </body>
 </html>
