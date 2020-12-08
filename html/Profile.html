@@ -12,20 +12,29 @@
     <ul id="menu">
         <li class="menu_btn"><a href="Main.html">Kotisivu</a></li>
         <li class="menu_btn" id="btn_feed"><a href="Main.html">Feed</a></li>
-        <li class="menu_btn" id="btn_up"><a>Upload</a></li>
         <li class="menu_btn"><a href="Profile.html">Profiili</a></li>
         <li class="menu_btn" class="sign"><a>Kirjaudu ulos</a></li>
     </ul>
 
 
 </header>
-<div id="profile">
-    <figure>
-        <p id="user">Username: Matti</p>
-        <img class="user_pic" src="http://placekitten.com/50/50">
-    </figure>
+<div class="column">
+    <div id="profile">
+
+        <img class="user_pic" src="http://placekitten.com/50/50" >
+        <h1 id="user">Username: Matti</h1>
+       
+
+
+        <form action="/action_page.php">
+            <input class="menu_btn" type="file" id="myFile" name="filename">
+            <input class="menu_btn" type="submit">
+        </form>
+    </div>
+
+
 </div>
-<div id="feed">
+<div class="column">
     <ul id="content">
         <li class="post">
         <p>Kissan nimi</p>
