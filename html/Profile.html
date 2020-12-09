@@ -16,49 +16,84 @@
         <li class="menu_btn" class="sign"><a>Kirjaudu ulos</a></li>
     </ul>
 
-
-</header>
-<div class="column">
-    <div id="profile">
-
-        <img class="user_pic" src="http://placekitten.com/50/50" >
-        <h1 id="user">Username: Matti</h1>
-       
-
-
-        <form action="/action_page.php">
-            <input class="menu_btn" type="file" id="myFile" name="filename">
-            <input class="menu_btn" type="submit">
-        </form>
+    <div id="log-out" style="display: none">
+        <!--<p id="user-info"></p>-->
+        <button class="light-border" style="background-color: #ccc">Kirjaudu ulos</button>
     </div>
 
+</header>
+
+<div class="container">
+    <div class="forms" id="login-wrapper">
+        <div class="form-wrapper">
+            <h3>Kirjautuminen</h3>
+            <form id="login-form" class="light-border">
+                <div>
+                    <label>Sähköposti:</label>
+                    <input class="light-border" type="text" name="username"/>
+                </div>
+                <div>
+                    <label>Salasana:</label>
+                    <input class="light-border" type="password" name="password"/>
+                </div>
+                <div>
+                    <button class="light-border" type="submit">Kirjaudu sisään</button>
+                </div>
+            </form>
+        </div>
+        <div class="form-wrapper">
+            <h3>Rekisteröinti</h3>
+            <form class="light-border" id="add-user-form">
+                <input class="light-border"
+                       type="text"
+                       name="name"
+                       pattern=".{3,}"
+                       placeholder="Nimimerkki"
+                       required>
+                <input class="light-border" type="email" name="username" placeholder="Sähköposti" required>
+                <input class="light-border" type="password" name="password" pattern="(?=.*[A-Z]).{8,}"
+                       placeholder="Salasana" required>
+                <button class="light-border" type="submit">Rekisteröidy</button>
+            </form>
+        </div>
+    </div>
 
 </div>
-<div class="column">
-    <ul id="content">
-        <li class="post">
-        <p>Kissan nimi</p>
-            <img src="http://placekitten.com/200/150">
-        </li>
-        <li class="post">
-            <p>Kissan nimi</p>
-            <img src="http://placekitten.com/200/150">
-        </li>
-        <li class="post">
-            <p>Kissan nimi</p>
-            <img src="http://placekitten.com/200/150">
-        </li>
-        <li class="post">
-            <p>Kissan nimi</p>
-            <img src="http://placekitten.com/200/150">
-        </li>
-        <li class="post">
-            <p>Kissan nimi</p>
-            <img src="http://placekitten.com/200/150">
-        </li>
-    </ul>
 
+<div class="content" >
+    <div class="column">
+        <div id="profile">
+
+            <img class="user_pic" src="http://placekitten.com/50/50">
+            <h1 id="user">Username: Matti</h1>
+
+
+            <form id="add-post-form">
+                <input class="menu_btn" type="file" name="filename">
+                <input class="menu_btn" type="submit">
+            </form>
+        </div>
+    </div>
+
+    <div class="column">
+        <ul id="content">
+
+            <li class="post">
+
+            </li>
+            <li class="post">
+                <p>Kissan nimi</p>
+                <img src="http://placekitten.com/200/150">
+            </li>
+
+        </ul>
+
+    </div>
 </div>
-<footer></footer>
+<footer> </footer>
+<script src="js/com.js"></script>
+<script src="js/serialize.js"></script>
+<script src="js/vis.js"></script>
+
 </body>
 </html>
