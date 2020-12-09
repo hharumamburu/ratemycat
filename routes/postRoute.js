@@ -21,20 +21,20 @@ const injectFile = (req, res, next) => {
         req.body.mimetype = req.file.mimetype;
     }
     next();
-}
+};
 
 router.get('/', postController.post_list_get);
 
 router.get('/:id', postController.post_get);
 
-router.post('/', upload.single('post'), injectFile, [
-    body('Description','vaadittu kenttä').isLength({min: 1}),
+router.post('/', upload.single('post'), injectFile, postController.make_thumbnail, [
+    body('Description','required field').isLength({min: 1}),
 
-    body('mimetype', 'ei ole kuva').contains('image'),
-], postController.post_create_post);
+    body('mimetype', 'not an image').contains('image'),
+], postController.create_post);
 
 router.put('/', [
-    body('Description','vaadittu kenttä').isLength({min: 1}),
+    body('Description','required field').isLength({min: 1}),
 
 ], postController.post_update_put);
 

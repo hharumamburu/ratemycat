@@ -9,7 +9,8 @@ const getAllUsers = async () => {
         console.log('rows', rows);
         return rows;
     } catch (e) {
-        console.log('error', e.message);
+        console.log('usermodel error', e.message);
+        return {error: 'db error'};
     }
 };
 
@@ -20,21 +21,22 @@ const getUser = async (id) => {
         console.log('rows', rows);
         return rows;
 
-    }catch (e) {
-        console.log('error', e.message);
+    } catch (e) {
+        console.log('usermodel error', e.message);
+        return {error: 'db error'};
     }
 }
 
 const addUser = async (params) => {
     try {
         const [rows] = await promisePool.execute(
-            'INSERT INTO users (Name, Email, Password) VALUES (?,?,?)',
-            params);
+            'INSERT INTO users (Name, Email, Password) VALUES (?,?,?)', params);
         console.log('rows', rows);
         return rows;
 
     }catch (e) {
-        console.log('error', e.message);
+        console.log('usermodel error', e.message);
+        return {error: 'db error'}
     }
 }
 
