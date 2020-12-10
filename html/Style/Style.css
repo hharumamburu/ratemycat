@@ -10,7 +10,7 @@ footer {
     display: block;
     margin: 0;
     background-color: #247291;
-    position:fixed;
+    position: fixed;
     bottom: 0;
     text-align: center;
 }
@@ -24,24 +24,27 @@ footer {
     padding: 20px;
     overflow: auto;
 }
-.column{
-     float:left;
-     width: 50%;
+
+.column {
+    float: left;
+    width: 50%;
     background-color: #fffdd0;
     height: 500px;
     overflow: auto;
 }
-#profile{
+
+#profile {
     background-color: #ead895;
-    margin:10px;
-    padding:5px 20px 20px;
-    border-radius:20px;
-    width:75%;
-    height:250px;
+    margin: 10px;
+    padding: 5px 20px 20px;
+    border-radius: 20px;
+    width: 75%;
+    height: 250px;
 }
-.user_pic{
-    float:right;
-    margin:20px;
+
+.user_pic {
+    float: right;
+    margin: 20px;
 
 }
 
@@ -63,65 +66,75 @@ ul#menu {
 li.menu_btn {
     display: inline;
 }
-li.post{
+
+li.post {
     list-style-type: none;
 }
+
 a {
     display: block;
     padding: 8px;
     background-color: #ead895;
-    float:left;
+    float: left;
 }
+
 .btn {
     display: block;
     padding: 8px;
     background-color: #ead895;
     float: left;
-    text-align:left;
+    text-align: left;
 }
-.post{
+
+.post {
     background-color: #ead895;
-    margin:10px;
-    padding:5px 20px 20px;
-    border-radius:20px;
-    width:500px;
-    height:250px;
+    margin: 10px;
+    padding: 5px 20px 20px;
+    border-radius: 20px;
+    width: 500px;
+    height: 250px;
 }
+
 .post p {
-    float:right;
+    float: right;
 }
+
 .post img {
-    margin:10px;
-    height:240px;
+    margin: 10px;
+    height: 240px;
     width: 240px;
 }
 
 
-@media screen and (max-width:740px) {
+@media screen and (max-width: 740px) {
 
     .post {
         height: 30%;
         width: 80%;
     }
+
     .post img {
         height: 100%;
 
     }
 }
 
-@media screen and (max-width:640px) {
+@media screen and (max-width: 640px) {
     .post {
         height: 50%;
         width: 80%;
     }
+
     .post img {
         height: 60%;
     }
+
     .post p {
-        float:none;
+        float: none;
     }
 }
-@media screen and (max-width:480px) {
+
+@media screen and (max-width: 480px) {
     #feed {
         margin-left: 0;
         margin-right: 0;
