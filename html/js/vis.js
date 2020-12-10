@@ -1,7 +1,6 @@
 'use strict';
 const url = '.'; // change url when uploading to server
 
-// select existing html elements
 const loginWrapper = document.querySelector('#login-wrapper');
 const userInfo = document.querySelector('#user-info');
 const logOut = document.querySelector('#log-out');
@@ -16,28 +15,23 @@ const imageModal = document.querySelector('#image-modal');
 const modalImage = document.querySelector('#image-modal img');
 const close = document.querySelector('#image-modal a');
 
-// create cat cards
+
 const createPostCards = (posts) => {
-    // clear ul
+
     ul.innerHTML = '';
     posts.forEach((post) => {
-        // create li with DOM methods
+
         const img = document.createElement('img');
         img.src = url + '/thumbnails/' + post.filename;
         img.alt = post.name;
         img.classList.add('resp');
 
-        // open large image when clicking image
+
         img.addEventListener('click', () => {
             modalImage.src = url + '/' + post.filename;
             imageModal.alt = post.name;
             imageModal.classList.toggle('hide');
-            try {
-                const coords = post.coords.split(',');
-                // console.log(coords);
-                addMarker(coords);
-            } catch (e) {
-            }
+
         });
 
         const figure = document.createElement('figure').appendChild(img);
@@ -46,25 +40,25 @@ const createPostCards = (posts) => {
         h2.innerHTML = post.name;
 
 
-        // add selected cat's values to modify form
+        // add selected post's values to modify form
         const modButton = document.createElement('button');
         modButton.innerHTML = 'Modify';
         modButton.addEventListener('click', () => {
             const inputs = modForm.querySelectorAll('input');
             inputs[0].value = post.name;
 
-            inputs[3].value = post.PostId;
-            modForm.querySelector('select').value = cat.owner;
+            inputs[1].value = post.description;
+            modForm.querySelector('select').value = post.description;
         });
 
-        // delete selected cat
+        // delete selected post
         const delButton = document.createElement('button');
         delButton.innerHTML = 'Delete';
         delButton.addEventListener('click', async () => {
             try {
-                const json = await communication.deletePost(posts.PostId);
+                const json = await communication.deletePost(post.PostId);
                 console.log('delete response', json);
-                getPost(); // update cat list
+                getPost();
             } catch (e) {
                 console.log(e.message());
             }
@@ -87,7 +81,7 @@ close.addEventListener('click', (evt) => {
     imageModal.classList.toggle('hide');
 });
 
-// get all cats
+// get all posts
 const getPost = async () => {
     console.log('getPost token ', sessionStorage.getItem('token'));
     try {
@@ -124,7 +118,7 @@ addForm.addEventListener('submit', async (evt) => {
         console.log('add response', json);
         if (json) {
             console.log('here');
-            getPost(); // refresh cat list after upload
+            getPost();
         }
     } catch (e) {
         alert(e.message);
@@ -157,7 +151,7 @@ loginForm.addEventListener('submit', async (evt) => {
         } else {
             // save token
             sessionStorage.setItem('token', json.token);
-            // show/hide forms + cats
+
             loginWrapper.style.display = 'none';
             logOut.style.display = 'block';
             main.style.display = 'block';
@@ -179,7 +173,7 @@ logOut.addEventListener('click', async (evt) => {
         // remove token
         sessionStorage.removeItem('token');
         alert('You have logged out');
-        // show/hide forms + cats
+
         loginWrapper.style.display = 'flex';
         logOut.style.display = 'none';
         main.style.display = 'none';
@@ -196,7 +190,7 @@ addUserForm.addEventListener('submit', async (evt) => {
         const json = await communication.register(data);
         // save token
         sessionStorage.setItem('token', json.token);
-        // show/hide forms + cats
+
         loginWrapper.style.display = 'none';
         logOut.style.display = 'block';
         main.style.display = 'block';
@@ -215,4 +209,4 @@ if (sessionStorage.getItem('token')) {
     main.style.display = 'block';
     getPost();
     createUserOptions();
-}
+};

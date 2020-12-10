@@ -85,7 +85,6 @@ const communication = (() => {
         try {
             return await doFetch(urlToServer + '/post/' + id, options);
         } catch (e) {
-            // console.log(e.message());
             throw new Error(e.message);
         }
     };
