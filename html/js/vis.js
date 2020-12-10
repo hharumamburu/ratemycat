@@ -36,8 +36,8 @@ const createPostCards = (posts) => {
 
         const figure = document.createElement('figure').appendChild(img);
 
-        const h2 = document.createElement('h2');
-        h2.innerHTML = post.name;
+        const p1 = document.createElement('p1');
+        p1.innerHTML = posts.description;
 
 
         // add selected post's values to modify form
@@ -45,9 +45,8 @@ const createPostCards = (posts) => {
         modButton.innerHTML = 'Modify';
         modButton.addEventListener('click', () => {
             const inputs = modForm.querySelectorAll('input');
-            inputs[0].value = post.name;
+            inputs[0].value = post.description;
 
-            inputs[1].value = post.description;
             modForm.querySelector('select').value = post.description;
         });
 
@@ -67,7 +66,7 @@ const createPostCards = (posts) => {
         const li = document.createElement('li');
         li.classList.add('light-border');
 
-        li.appendChild(h2);
+        li.appendChild(p1);
         li.appendChild(figure);
         li.appendChild(modButton);
         li.appendChild(delButton);
@@ -101,15 +100,15 @@ const createUserOptions = async () => {
         users.forEach((user) => {
             // create options with DOM methods
             const option = document.createElement('option');
-            option.value = users.userId;
-            option.innerHTML = user.name;
+            option.value = users.UserId;
+            option.innerHTML = users.name;
             option.classList.add('light-border');
             list.appendChild(option);
         });
     });
 };
 
-// submit add cat form
+// submit add form
 addForm.addEventListener('submit', async (evt) => {
     evt.preventDefault();
     const fd = new FormData(addForm);

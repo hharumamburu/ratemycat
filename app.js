@@ -12,6 +12,7 @@ const port = 3000;
 
 app.use(cors());
 app.use(express.static('uploads'));
+app.use('/thumbnails', express.static('thumbnails'));
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());

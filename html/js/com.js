@@ -1,5 +1,3 @@
-'use strict';
-
 const communication = (() => {
     'use strict';
     const urlToServer = '.'; // change url when uploading to server if necessary
